@@ -10,18 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url":
-      "git+https://github.com/memyselfandhai/assignment_deploying_with_webpack.git"
+    "url": "git+https://github.com/memyselfandhai/assignment_deploying_with_webpack.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url":
-      "https://github.com/memyselfandhai/assignment_deploying_with_webpack/issues"
+    "url": "https://github.com/memyselfandhai/assignment_deploying_with_webpack/issues"
   },
-  "homepage":
-    "https://github.com/memyselfandhai/assignment_deploying_with_webpack#readme",
+  "homepage": "https://github.com/memyselfandhai/assignment_deploying_with_webpack#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
