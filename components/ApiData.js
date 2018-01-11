@@ -11,22 +11,23 @@ class ApiData extends Component {
     this.state = {
       display: {}
     };
+    this.display = this.display.bind(this);
   }
 
-  //whenever the search component updates, this will be run
-  componentdidMount() {
-    fetch(`https://swapi.co/api/people/1/`)
+  //why does componentDidMount not call this function?
+  componentWillMount() {
+    fetch(`https://swapi.co/api/people`)
       .then(function(response) {
-        console.log("making a fetch=>");
         return response.json();
       })
       .then(function(json) {
-        console.log("json=>", json);
+        console.log("json in fetch=>", json);
         this.setState({ display: json });
       });
   }
 
   display(json) {
+    console.log("json => in display", json);
     if (json.results) {
       return json.results.map(item => {
         return (
@@ -44,9 +45,15 @@ class ApiData extends Component {
   }
   //
   render() {
+    console.log("this.state => ", this.state);
     if (this.state.display) {
       //Remember --> you cannot render objects just like that! So, we use JSON.stringify here
-      return <div>{this.display(this.state.display)}</div>;
+      return (
+        <div>
+          {this.display(this.state.display)}
+          <p onClick={this.display.bind(this)}>Test </p>
+        </div>
+      );
     } else {
       return <div>Loading...</div>;
     }
